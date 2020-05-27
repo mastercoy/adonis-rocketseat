@@ -29,6 +29,7 @@ class TaskController {
 
   async show ({ params }) {
     const task = await Task.findOrFail(params.id)
+    return task
 
   }
 
@@ -49,7 +50,10 @@ class TaskController {
   }
 
 
-  async destroy ({ params, request, response }) {
+  async destroy ({ params }) {
+    const task = await Task.findOrFail(params.id)
+    console.log(params) //afazer retirar linha
+    await task.delete()
   }
 }
 
