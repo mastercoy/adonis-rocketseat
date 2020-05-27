@@ -57,6 +57,7 @@ class ForgotPasswordController {
                        .send({ error: { message: 'Token expired' } })
       }
 
+
       user.token = null
       user.token_created_at = null
       user.password = password
