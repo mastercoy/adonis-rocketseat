@@ -52,7 +52,6 @@ class TaskController {
 
   async destroy ({ params }) {
     const task = await Task.findOrFail(params.id)
-    console.log(params) //afazer retirar linha
     await task.delete()
   }
 }
